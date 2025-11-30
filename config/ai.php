@@ -8,7 +8,7 @@ return [
     |--------------------------------------------------------------------------
     | This provider is used when no provider is explicitly requested.
     */
-    'default' => env('AI_PROVIDER', 'openai'),
+    'default' => env('AI_PROVIDER', 'ollama'),
 
     /*
     |--------------------------------------------------------------------------
@@ -33,6 +33,11 @@ return [
             'api_key' => env('GROQ_API_KEY'),
             'model' => env('GROQ_MODEL', 'llama-3.1-8b-instant'),
             'base_url' => env('GROQ_BASE_URL', 'https://api.groq.com/openai/v1'),
+        ],
+
+        'ollama' => [
+            'host' => env('OLLAMA_HOST', 'http://localhost:11434'),
+            'model' => env('OLLAMA_MODEL', 'gemma3:1b'),
         ],
 
     ],

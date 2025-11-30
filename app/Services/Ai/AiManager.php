@@ -5,6 +5,7 @@ namespace App\Services\Ai;
 use App\Services\Ai\Providers\AiProvider;
 use App\Services\Ai\Providers\GeminiProvider;
 use App\Services\Ai\Providers\GroqProvider;
+use App\Services\Ai\Providers\OllamaProvider;
 use App\Services\Ai\Providers\OpenAiProvider;
 use InvalidArgumentException;
 
@@ -68,6 +69,7 @@ class AiManager
             'openai' => new OpenAiProvider($config),
             'gemini' => new GeminiProvider($config),
             'groq' => new GroqProvider($config),
+            'ollama' => new OllamaProvider($config),
             default => throw new InvalidArgumentException("AI provider [{$name}] is not supported."),
         };
     }
